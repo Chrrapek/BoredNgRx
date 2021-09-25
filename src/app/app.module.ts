@@ -3,14 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {BoredModule} from './bored-feature/bored.module';
+import {StoreModule} from '@ngrx/store';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    BoredModule
+    BoredModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

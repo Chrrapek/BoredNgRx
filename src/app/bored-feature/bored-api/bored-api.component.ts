@@ -1,19 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {BoredItemModel} from '../model/bored-item.model';
+import {Store} from '@ngrx/store';
+import {addActivity} from '../../store/bored.actions';
+import {BoredItemsState} from '../../store/bored.reducer';
 
 @Component({
   selector: 'app-bored-api',
   template: `
-    <p>
-      bored-api works!
-    </p>
+    <div class="api-button" (click)="getActivity()">Get one random activity!</div>
   `,
   styleUrls: ['./bored-api.component.scss']
 })
 export class BoredApiComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient, private store: Store<BoredItemsState>) {
+  }
 
   ngOnInit(): void {
   }
 
+  getActivity(): void {
+    this.http.get<BoredItemModel>('https://www.boredapi.com/api/activity')
+      .subscribe(model => this.store.dispatch(addActivity(model)));
+  }
 }

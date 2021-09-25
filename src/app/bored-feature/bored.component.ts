@@ -4,7 +4,9 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-bored',
   template: `
     <div>
-      bored works!
+      <app-bored-api></app-bored-api>
+      <app-bored-form></app-bored-form>
+      <app-bored-list></app-bored-list>
     </div>
   `,
   styleUrls: ['./bored.component.scss']
