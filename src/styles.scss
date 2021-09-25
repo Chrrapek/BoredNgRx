@@ -5,6 +5,6 @@ html, body {
 }
 
 body {
-  display: flex;
-  justify-content: center;
+  max-width: 1024px;
+  margin: 100px auto;
 }

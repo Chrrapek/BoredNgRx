@@ -1,0 +1,15 @@
+.api-button {
+  display: flex;
+  flex: 1 0 auto;
+  justify-content: center;
+  padding: 5px 10px;
+  border: 1px solid #AAA;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: #DDD;
+
+  &:hover {
+    background-color: #CCC;
+  }
+}
+

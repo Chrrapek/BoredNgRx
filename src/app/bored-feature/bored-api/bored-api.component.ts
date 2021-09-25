@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {BoredItemModel} from '../model/bored-item.model';
 import {Store} from '@ngrx/store';
 import {addActivity} from '../../store/bored.actions';
-import {BoredItemsState} from '../../store/bored.reducer';
+import {State} from '../../store/app.state';
 
 @Component({
   selector: 'app-bored-api',
@@ -14,7 +14,8 @@ import {BoredItemsState} from '../../store/bored.reducer';
 })
 export class BoredApiComponent implements OnInit {
 
-  constructor(private http: HttpClient, private store: Store<BoredItemsState>) {
+  constructor(private http: HttpClient,
+              private store: Store<State>) {
   }
 
   ngOnInit(): void {

@@ -1,0 +1,31 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 10px;
+
+  label {
+    font-size: 0.7em;
+  }
+}
+
+.submit-button {
+  display: flex;
+  justify-content: center;
+  padding: 5px 10px;
+  border: 1px solid #AAA;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: #DDD;
+
+  &:hover:not(:disabled) {
+    background-color: #CCC;
+  };
+}

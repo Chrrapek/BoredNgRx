@@ -1,19 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-bored',
   template: `
-    <div>
-      <app-bored-api></app-bored-api>
+    <div class="inputs-container">
       <app-bored-form></app-bored-form>
-      <app-bored-list></app-bored-list>
+      <app-bored-api></app-bored-api>
     </div>
+    <app-bored-list></app-bored-list>
   `,
   styleUrls: ['./bored.component.scss']
 })
 export class BoredComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

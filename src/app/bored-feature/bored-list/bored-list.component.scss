@@ -1,0 +1,18 @@
+.activity-container {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #AAA;
+  border-bottom: none;
+  padding: 5px;
+
+  &:nth-of-type(2n) {
+    background-color: #DDD;
+  }
+  &:last-of-type {
+    border-bottom: 1px solid #AAA;
+  }
+}
+
+.activity-name {
+
+}
