@@ -45,9 +45,11 @@ export class BoredFormComponent implements OnInit {
     this.model = this.newModel();
   }
 
-  private newModel = (): BoredItemModel => ({
-    activity: '',
-    participants: 0
-  });
+  private newModel(): BoredItemModel {
+    return {
+      activity: '',
+      participants: 0
+    };
+  }
 
 }
