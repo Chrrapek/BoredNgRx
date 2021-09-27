@@ -1,6 +1,6 @@
 import {createFeatureSelector, createSelector} from '@ngrx/store';
-import {BoredItemsState} from './bored.reducer';
+import {ActivityItemsState} from './activity.reducer';
 
-const getActivitiesFeatureState = createFeatureSelector<BoredItemsState>('activities');
+const getActivitiesFeatureState = createFeatureSelector<ActivityItemsState>('activities');
 
 export const getActivities = createSelector(getActivitiesFeatureState, state => state.activities);

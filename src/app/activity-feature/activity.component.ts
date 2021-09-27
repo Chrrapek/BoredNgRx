@@ -9,9 +9,9 @@ import {Component, OnInit} from '@angular/core';
     </div>
     <app-bored-list></app-bored-list>
   `,
-  styleUrls: ['./bored.component.scss']
+  styleUrls: ['./activity.component.scss']
 })
-export class BoredComponent implements OnInit {
+export class ActivityComponent implements OnInit {
 
   constructor() {
   }

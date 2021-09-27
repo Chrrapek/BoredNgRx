@@ -2,10 +2,11 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
-import {BoredModule} from './bored-feature/bored.module';
+import {ActivityModule} from './activity-feature/activity.module';
 import {StoreModule} from '@ngrx/store';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from '../environments/environment';
+import {EffectsModule} from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -13,8 +14,9 @@ import {environment} from '../environments/environment';
   ],
   imports: [
     BrowserModule,
-    BoredModule,
+    ActivityModule,
     StoreModule.forRoot({}),
+    EffectsModule.forRoot(),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,

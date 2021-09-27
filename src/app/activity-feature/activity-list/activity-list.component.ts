@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {State} from '../../store/app.state';
 import {Store} from '@ngrx/store';
-import {BoredItemModel} from '../model/bored-item.model';
-import {getActivities} from '../../store/bored.selectors';
+import {ActivityItemModel} from '../model/activity-item.model';
+import {getActivities} from '../../store/activity.selectors';
 
 @Component({
   selector: 'app-bored-list',
@@ -16,11 +16,11 @@ import {getActivities} from '../../store/bored.selectors';
       </div>
     </div>
   `,
-  styleUrls: ['./bored-list.component.scss']
+  styleUrls: ['./activity-list.component.scss']
 })
-export class BoredListComponent implements OnInit {
+export class ActivityListComponent implements OnInit {
 
-  activities: BoredItemModel[] = [];
+  activities: ActivityItemModel[] = [];
 
   constructor(private store: Store<State>) {
   }

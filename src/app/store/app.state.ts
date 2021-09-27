@@ -1,5 +1,5 @@
-import {BoredItemsState} from './bored.reducer';
+import {ActivityItemsState} from './activity.reducer';
 
 export interface State {
-  activities: BoredItemsState;
+  activitiesState: ActivityItemsState;
 }

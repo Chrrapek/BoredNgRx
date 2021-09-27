@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {State} from '../../store/app.state';
-import {BoredItemModel} from '../model/bored-item.model';
-import {addActivity} from '../../store/bored.actions';
+import {ActivityItemModel} from '../model/activity-item.model';
+import {addActivity} from '../../store/activity.actions';
 
 @Component({
   selector: 'app-bored-form',
@@ -28,11 +28,11 @@ import {addActivity} from '../../store/bored.actions';
       </form>
     </div>
   `,
-  styleUrls: ['./bored-form.component.scss']
+  styleUrls: ['./activity-form.component.scss']
 })
-export class BoredFormComponent implements OnInit {
+export class ActivityFormComponent implements OnInit {
 
-  model: BoredItemModel = this.newModel();
+  model: ActivityItemModel = this.newModel();
 
   constructor(private store: Store<State>) {
   }
@@ -45,7 +45,7 @@ export class BoredFormComponent implements OnInit {
     this.model = this.newModel();
   }
 
-  private newModel(): BoredItemModel {
+  private newModel(): ActivityItemModel {
     return {
       activity: '',
       participants: 0

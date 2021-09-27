@@ -1,4 +1,4 @@
-export interface BoredItemModel {
+export interface ActivityItemModel {
   activity: string;
   participants: number;
 }
