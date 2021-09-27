@@ -9,6 +9,9 @@ import {EMPTY} from 'rxjs';
 @Injectable()
 export class ActivityEffect {
 
+  constructor(private actions$: Actions, private http: HttpClient) {
+  }
+
   getActivity$ = createEffect(() => this.actions$.pipe(
     ofType(getActivityType),
     mergeMap(() => this.http.get<ActivityItemModel>('https://www.boredapi.com/api/activity')
@@ -17,7 +20,4 @@ export class ActivityEffect {
         catchError(() => EMPTY)
       ))
   ));
-
-  constructor(private actions$: Actions, private http: HttpClient) {
-  }
 }

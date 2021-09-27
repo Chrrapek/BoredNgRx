@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 import {Store} from '@ngrx/store';
 import {getActivity} from '../../store/activity.actions';
 import {State} from '../../store/app.state';
@@ -13,8 +12,7 @@ import {State} from '../../store/app.state';
 })
 export class ActivityApiComponent {
 
-  constructor(private http: HttpClient,
-              private store: Store<State>) {
+  constructor(private store: Store<State>) {
   }
 
   getActivity(): void {
