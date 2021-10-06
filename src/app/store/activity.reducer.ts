@@ -1,4 +1,4 @@
-import {createReducer, on} from '@ngrx/store';
+import {Action, createReducer, on} from '@ngrx/store';
 import {activityAdded} from './activity.actions';
 import {ActivityItemModel} from '../activity-feature/model/activity-item.model';
 
