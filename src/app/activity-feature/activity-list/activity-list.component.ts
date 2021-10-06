@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Observable} from 'rxjs';
 import {State} from '../../store/app.state';
 import {Store} from '@ngrx/store';
 import {ActivityItemModel} from '../model/activity-item.model';
@@ -7,7 +8,7 @@ import {getActivities} from '../../store/activity.selectors';
 @Component({
   selector: 'app-bored-list',
   template: `
-    <div *ngFor="let activity of activities" class="activity-container">
+    <div *ngFor="let activity of activities$ | async" class="activity-container">
       <div class="activity-name">
         {{activity.activity}}
       </div>
@@ -20,14 +21,13 @@ import {getActivities} from '../../store/activity.selectors';
 })
 export class ActivityListComponent implements OnInit {
 
-  activities: ActivityItemModel[] = [];
+  activities$: Observable<ActivityItemModel[]>;
 
   constructor(private store: Store<State>) {
   }
 
   ngOnInit(): void {
-    this.store.select(getActivities)
-      .subscribe(activities => this.activities = activities);
+    this.activities$ = this.store.select(getActivities);
   }
 
 }

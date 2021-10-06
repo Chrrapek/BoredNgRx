@@ -1,5 +1,5 @@
 import {createReducer, on} from '@ngrx/store';
-import {addActivity} from './activity.actions';
+import {activityAdded} from './activity.actions';
 import {ActivityItemModel} from '../activity-feature/model/activity-item.model';
 
 export interface ActivityItemsState {
@@ -10,7 +10,7 @@ const initialState: ActivityItemsState = {activities: []};
 
 export const activityReducer = createReducer(
   initialState,
-  on(addActivity, (state, payload) => ({
+  on(activityAdded, (state, payload) => ({
     ...state,
     activities: state.activities.concat(payload)
   }))

@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Store} from '@ngrx/store';
-import {getActivity} from '../../store/activity.actions';
+import {activitiesRetrieved} from '../../store/activity.actions';
 import {State} from '../../store/app.state';
 
 @Component({
@@ -16,6 +16,6 @@ export class ActivityApiComponent {
   }
 
   getActivity(): void {
-    this.store.dispatch(getActivity());
+    this.store.dispatch(activitiesRetrieved());
   }
 }

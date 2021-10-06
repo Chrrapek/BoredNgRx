@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {State} from '../../store/app.state';
 import {ActivityItemModel} from '../model/activity-item.model';
-import {addActivity} from '../../store/activity.actions';
+import {activityAdded} from '../../store/activity.actions';
 
 @Component({
   selector: 'app-bored-form',
@@ -30,18 +30,15 @@ import {addActivity} from '../../store/activity.actions';
   `,
   styleUrls: ['./activity-form.component.scss']
 })
-export class ActivityFormComponent implements OnInit {
+export class ActivityFormComponent {
 
   model: ActivityItemModel = this.newModel();
 
   constructor(private store: Store<State>) {
   }
 
-  ngOnInit(): void {
-  }
-
   onSubmit(): void {
-    this.store.dispatch(addActivity(this.model));
+    this.store.dispatch(activityAdded(this.model));
     this.model = this.newModel();
   }
 
